@@ -42,7 +42,7 @@ $("input[name='rowCheckBox']").on('change', function () {
   if ($(this).prop('checked') === false) {
       selectedDocuments--;
       if(selectedDocuments == 0){
-        $("#documentsSelectedCount").text("No Documents selected.");
+        $("#documentsSelectedCount").text("No documents selected.");
       }
       else if(selectedDocuments == 1){
         $("#documentsSelectedCount").text(selectedDocuments + " Document selected:");
