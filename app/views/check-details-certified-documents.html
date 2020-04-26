@@ -1,0 +1,174 @@
+
+{% extends "layout.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Check your order details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "delivery-address-name"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <form action="/payment-review" method="post">
+
+            <h1 class="govuk-heading-xl">Check your order details</h1>
+
+            <h2 class="govuk-heading-m">Order details</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Company name",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "Stationary LTD"
+                  }
+                },
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "027389177"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery method"
+                  },
+                  value: {
+                    text: "Standard delivery (dispatched within 4 working days)"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery details"
+                  },
+                  value: {
+                    html: "Mr Jamies Hanson </br> 48 Tonna Road </br> Barry </br> CF45 8YG"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "delivery address"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+            <h2 class="govuk-heading-m">Document summary</h2>
+
+            {{ govukTable({
+              caption: "",
+
+
+              head: [
+                {
+                  html: "Date filed",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  html: "Type",
+                  classes: "document-type"
+                },
+                {
+                  html: "Description",
+                  classes: 'govuk-!-width-half'
+                },
+                {
+                  html: "Fee"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "04 Dec 2017"
+                  },
+                  {
+                  html: "TM02",
+                  classes: "document-type"
+                  },
+                  {
+                    text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                 [
+                  {
+                    html: "29 Aug 1977"
+                  },
+
+                  {
+                    html: "TM02",
+                    classes: "document-type"
+                  },
+                  
+                  {
+                    html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                 [ 
+                  {
+                    html: "04 Dec 2017"
+                  },
+                  {
+                    html: "TM01",
+                    classes: "document-type"
+                  },
+                  {
+                    html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                [ 
+                  {
+                    html: "Total"
+                  },
+                  {
+                    html: ""
+                  },
+                  {
+                    html:""
+                  },
+                  {
+                    text:"£45"
+                  }
+                ]
+              ]
+            }) }}
+
+        {{ govukButton({
+          text: "Continue to payment",
+          href:"confirmation-certified-documents"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

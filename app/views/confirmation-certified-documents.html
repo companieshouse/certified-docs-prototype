@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block beforeContent %}
+ {{ govukBackLink({
+    text: "Return to company overview",
+    href: "start"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Certificate ordered confirmation
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Certified documents ordered",
+        html: "Your order reference number<br><strong>3161-204-251-249-0359</strong>"
+      }) }}
+
+      <h1 class="govuk-heading-m">What happens next</h1>
+      <p class="govuk-body">We'll prepare the certified documents and dispatch it within 4 working days.</p>
+
+      <h2 class="govuk-heading-m">Order details</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Company name",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "Stationary LTD"
+                  }
+                },
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "027389177"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery method"
+                  },
+                  value: {
+                    text: "Standard delivery (dispatched within 4 working days)"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery details"
+                  },
+                  value: {
+                    html: "Mr Jamies Hanson </br> 48 Tonna Road </br> Barry </br> CF45 8YG"
+                  }
+                }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Document summary</h2>
+
+            {{ govukTable({
+              caption: "",
+
+
+              head: [
+                {
+                  html: "Date filed",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  html: "Type",
+                  classes: "document-type"
+                },
+                {
+                  html: "Description",
+                  classes: 'govuk-!-width-half'
+                },
+                {
+                  html: "Fee"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "04 Dec 2017"
+                  },
+                  {
+                  html: "TM02",
+                  classes: "document-type"
+                  },
+                  {
+                    text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                 [
+                  {
+                    html: "29 Aug 1977"
+                  },
+
+                  {
+                    html: "TM02",
+                    classes: "document-type"
+                  },
+                  
+                  {
+                    html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                 [ 
+                  {
+                    html: "04 Dec 2017"
+                  },
+                  {
+                    html: "TM01",
+                    classes: "document-type"
+                  },
+                  {
+                    html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+                  },
+                  {
+                    text:"£15"
+                  }
+                ],
+                [ 
+                  {
+                    html: "Total"
+                  },
+                  {
+                    html: ""
+                  },
+                  {
+                    html:""
+                  },
+                  {
+                    text:"£45"
+                  }
+                ]
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Your payment details</h2>
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Amount paid",
+                  classes: 'govuk-!-width-one-half'
+                },
+                value: {
+                  text: "£15",
+                  classes: 'govuk-!-width-one-half'
+                }
+              },
+              {
+                key: {
+                  text: "Payment reference"
+                },
+                value: {
+                  text: "RS5VSN6DRE"
+                }
+              },
+              {
+                key: {
+                  text: "Date and time of payment"
+                },
+                value: {
+                  html: "11 March 2020 – 10:56:14"
+                }
+              }
+            ]
+          }) }}
+
+        <h2 class="govuk-heading-m">How to contact us</h2>
+          <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order.</p>
+          <p>Include your order reference number when you contact us. </p>
+
+
+          <h2 class="govuk-heading-m">What do you want to do next?</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="" class="govuk-link">print this page for your records</a></li>
+            <li><a href="start" class="govuk-link">return to company overview</a></li>
+          </ul>
+
+ </div>
+  </div>
+{% endblock %}
