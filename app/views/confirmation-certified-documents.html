@@ -17,12 +17,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
-        titleText: "Certified documents ordered",
+        titleText: "Certified document order confirmed",
         html: "Your order reference number<br><strong>3161-204-251-249-0359</strong>"
       }) }}
 
       <h1 class="govuk-heading-m">What happens next</h1>
-      <p class="govuk-body">We'll prepare the certified documents and dispatch it within 4 working days.</p>
+      <p class="govuk-body">We'll prepare your order and dispatch it within 4 working days.</p>
 
       <h2 class="govuk-heading-m">Order details</h2>
 
@@ -65,7 +65,7 @@
               ]
             }) }}
 
-      <h2 class="govuk-heading-m">Document summary</h2>
+      <h2 class="govuk-heading-m">Document details</h2>
 
             {{ govukTable({
               caption: "",
@@ -113,7 +113,7 @@
                     html: "TM02",
                     classes: "document-type"
                   },
-                  
+
                   {
                     html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
                   },
@@ -121,7 +121,7 @@
                     text:"£15"
                   }
                 ],
-                 [ 
+                 [
                   {
                     html: "04 Dec 2017"
                   },
@@ -136,7 +136,7 @@
                     text:"£15"
                   }
                 ],
-                [ 
+                [
                   {
                     html: "Total"
                   },
@@ -153,7 +153,7 @@
               ]
             }) }}
 
-      <h2 class="govuk-heading-m">Your payment details</h2>
+      <h2 class="govuk-heading-m">Payment details</h2>
           {{ govukSummaryList({
             rows: [
               {
