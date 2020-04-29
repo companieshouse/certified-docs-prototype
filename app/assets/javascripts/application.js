@@ -45,10 +45,10 @@ $("input[name='rowCheckBox']").on('change', function () {
         $("#documentsSelectedCount").text("No documents selected.");
       }
       else if(selectedDocuments == 1){
-        $("#documentsSelectedCount").text(selectedDocuments + " Document selected:");
+        $("#documentsSelectedCount").text(selectedDocuments + " document selected:");
       }
       else if(selectedDocuments > 1){
-        $("#documentsSelectedCount").text(selectedDocuments + " Documents selected:");
+        $("#documentsSelectedCount").text(selectedDocuments + " documents selected:");
       }
       var element = $(this).closest('tr').index();
       $("#ul"+ element).remove();
@@ -56,10 +56,10 @@ $("input[name='rowCheckBox']").on('change', function () {
     } else {
       selectedDocuments++;
       if(selectedDocuments == 1){
-        $("#documentsSelectedCount").text(selectedDocuments + " Document selected:");
+        $("#documentsSelectedCount").text(selectedDocuments + " document selected:");
       }
       else if(selectedDocuments > 1){
-        $("#documentsSelectedCount").text(selectedDocuments + " Documents selected:");
+        $("#documentsSelectedCount").text(selectedDocuments + " documents selected:");
       }
 
       var element = $(this).closest('tr').index();
