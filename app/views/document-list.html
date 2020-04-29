@@ -11,7 +11,11 @@
     <h2 class="govuk-heading-l">Garden Landscapes LTD </h2>
     <p class="govuk-body">Company number <span class="govuk-body govuk-!-font-weight-bold"> 01234991</span> </p>
 
-    <h3 class="govuk-heading-m">2 documents selected</h3>
+    {{ govukInsetText({
+      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
+    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+    </ul>"
+    }) }}
 
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -186,7 +190,7 @@
         ]
       }) }}
 
-      <h3 class="govuk-heading-m" id="documentsSelectedCount">0 Documents selected</h3>
+      <h3 class='govuk-heading-m' id='documentsSelectedCountBottom'>0 documents selected</h3>
 
         {{ govukButton({
           text: "Continue",
