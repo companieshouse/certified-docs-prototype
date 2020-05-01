@@ -63,7 +63,7 @@ $("input[name='rowCheckBox']").on('change', function () {
         newText = selectedDocuments + " documents selected"
       }
       var element = $(this).closest('tr').index();
-      var description = $(this).closest('td').nextAll().last().text();
+      var description = $(this).closest('td').nextAll().last().prev().text();
       $("#documentsSelectedList").append("<li id='ul" + element + "'>" + description + "</li>");
   }
   $("#documentsSelectedCountTop").text(newText);
