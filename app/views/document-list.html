@@ -1,17 +1,32 @@
 {% extends "layout.html" %}
 
+{% block pageTitle %}
+  Add documents to order
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "CHS-signin"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-two-thirds">
 
-    <h1 class="govuk-heading-xl">Documents to be certified</h1>
+    <h1 class="govuk-heading-xl">Add documents to order</h1>
 
     <h2 class="govuk-heading-l">Garden Landscapes LTD </h2>
     <p class="govuk-body">Company number <span class="govuk-body govuk-!-font-weight-bold"> 01234991</span> </p>
 
-    <h3 class="govuk-heading-m">2 documents selected</h3>
+    {{ govukInsetText({
+      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
+    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+    </ul>"
+    }) }}
 
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -122,7 +137,7 @@
         rows: [
           [
             {
-              html: ' <div class="govuk-checkboxes govuk-checkboxes--small">
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
                       <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
@@ -144,7 +159,7 @@
           ],
            [
             {
-              html: ' <div class="govuk-checkboxes govuk-checkboxes--small">
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
                       <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
@@ -165,7 +180,7 @@
           ],
            [ 
             {
-              html: ' <div class="govuk-checkboxes govuk-checkboxes--small">
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
                       <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
@@ -186,10 +201,10 @@
         ]
       }) }}
 
-      <h3 class="govuk-heading-m" id="documentsSelectedCount">0 Documents selected</h3>
+      <h3 class='govuk-heading-m' id='documentsSelectedCountBottom'>0 documents selected</h3>
 
         {{ govukButton({
-          text: "Continue",
+          text: "Add documents to order",
           href:"../delivery-address-name"
         }) }}
 
