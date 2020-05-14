@@ -2,6 +2,7 @@
 
 
 var selectedDocuments = 0;
+var userSelections = [];
 // Warn about using the kit in production
 if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
@@ -9,23 +10,73 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+  
+
+$('.document-type').hide()
 
 
 $("input[name='accounts']").on('change', function () {
 	if ($(this).prop('checked') === false) {
-		$('tr td:nth-child(3)').each(function (index, element) {
-	    	if($(this).text().trim() == "TM02"){
-	    		$(this).closest('tr').show();
-	    	}
- 		});
-    } else {
-     	$('tr td:nth-child(3)').each(function (index, element) {
-	    	if($(this).text().trim() == "TM02"){
-	    		$(this).closest('tr').hide();
-	    	}
- 		});
+      userSelections = jQuery.grep(userSelections, function(value) {
+        return value != 'AA';
+      });
+  } else {
+    userSelections.push('AA');
 	}
+  $('tr td:nth-child(3)').each(function (index, element) {
+      if(userSelections.includes($(this).text().trim()) || userSelections.length==0){
+        $(this).closest('tr').show();
+      }
+      else{
+        $(this).closest('tr').hide();
+      }
+  });
 })
+
+$("input[name='capital']").on('change', function () {
+  if ($(this).prop('checked') === false) {
+      userSelections = jQuery.grep(userSelections, function(value) {
+        return (value != 'SH19' && value != 'CERT15' && value != 'OC138' && value != 'PROSP');
+      });
+  } else {
+    userSelections.push('SH19');
+    userSelections.push('CERT15');
+    userSelections.push('OC138');
+    userSelections.push('PROSP');
+  }
+  $('tr td:nth-child(3)').each(function (index, element) {
+      if(userSelections.includes($(this).text().trim()) || userSelections.length==0){
+        $(this).closest('tr').show();
+      }
+      else{
+        $(this).closest('tr').hide();
+      }
+  });
+})
+
+$("input[name='charges']").on('change', function () {
+  if ($(this).prop('checked') === false) {
+      userSelections = jQuery.grep(userSelections, function(value) {
+        return (value != 'MG04' && value != 'MR04' && value != '403a' && value != '395' && value != '397');
+      });
+  } else {
+    userSelections.push('MG04');
+    userSelections.push('MR04');
+    userSelections.push('403a');
+    userSelections.push('395');
+    userSelections.push('397');
+  }
+  $('tr td:nth-child(3)').each(function (index, element) {
+      if(userSelections.includes($(this).text().trim()) || userSelections.length==0){
+        $(this).closest('tr').show();
+      }
+      else{
+        $(this).closest('tr').hide();
+      }
+  });
+})
+
+
 
 
 $("input[name='documentType']").on('change', function () {
