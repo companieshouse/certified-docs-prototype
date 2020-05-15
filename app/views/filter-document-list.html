@@ -1,7 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Order a certificate
+  Add documents to order
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "CHS-signin"
+  }) }}
 {% endblock %}
 
 
