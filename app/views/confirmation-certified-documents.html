@@ -18,7 +18,7 @@
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel({
         titleText: "Certified document order confirmed",
-        html: "Your order reference number<br><strong>3161-204-251-249-0359</strong>"
+        html: "Your order reference number<br><strong>CRT-168827-927371</strong>"
       }) }}
 
       <h1 class="govuk-heading-m">What happens next</h1>
@@ -81,7 +81,7 @@
 
       <h2 class="govuk-heading-m">Document details</h2>
 
-            {{ govukTable({
+          {{ govukTable({
               caption: "",
 
 
@@ -91,78 +91,64 @@
                   classes: 'govuk-!-width-one-quarter'
                 },
                 {
-                  html: "Type",
-                  classes: "document-type"
+                  html: "Type"
                 },
                 {
                   html: "Description",
                   classes: 'govuk-!-width-half'
                 },
                 {
-                  html: "Fee"
+                  html: "Fee" 
+                },
+                {
                 }
               ],
               rows: [
                 [
                   {
-                    text: "04 Dec 2017"
+                    text: "15 Feb 2018"
                   },
                   {
-                  html: "TM02",
-                  classes: "document-type"
+                  html: "AP03"
                   },
                   {
-                    text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+                    text:"Appointment of Ms Sharon Michelle White as a director on 4 February 2020"
                   },
                   {
                     text:"£15"
+                  },
+                  {
+                    html:"<a href='#' class='govuk-link'>Remove</a>"
                   }
+
                 ],
                  [
                   {
-                    html: "29 Aug 1977"
+                    html: "07 Feb 2020"
                   },
-
                   {
-                    html: "TM02",
-                    classes: "document-type"
+                    html: "TM01"
                   },
-
                   {
-                    html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
+                    html: "Appointment of Mr Peter Simpson as a secretary on 31 January 2018."
                   },
                   {
                     text:"£15"
-                  }
-                ],
-                 [
-                  {
-                    html: "04 Dec 2017"
                   },
                   {
-                    html: "TM01",
-                    classes: "document-type"
-                  },
-                  {
-                    html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
-                  },
-                  {
-                    text:"£15"
+                    html:"<a href='#' class='govuk-link'>Remove</a>"
                   }
                 ],
                 [
                   {
-                    html: "Total"
+                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Total</p>"
                   },
+                  {},
+                  {},
                   {
-                    html: ""
+                    html:"<p class='govuk-body govuk-!-font-weight-bold'>£30</p>"
                   },
-                  {
-                    html:""
-                  },
-                  {
-                    text:"£45"
-                  }
+                  {}
                 ]
               ]
             }) }}
@@ -176,7 +162,7 @@
                   classes: 'govuk-!-width-one-half'
                 },
                 value: {
-                  text: "£15",
+                  text: "£30",
                   classes: 'govuk-!-width-one-half'
                 }
               },
