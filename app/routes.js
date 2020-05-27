@@ -35,7 +35,7 @@ router.post('/CHS-signin', function(req, res) {
 	}
 	else
 	{
-		res.redirect('certificate-details-MVP')
+		res.redirect('filter-document-list')
 	}
 })
 
@@ -87,11 +87,6 @@ router.post('/delivery-address-name', function(req, res) {
 	{
 		res.redirect('check-details-MVP')
 	}
-})
-
-router.post('/certificate-details-MVP', function(req, res) {
-
-		res.redirect('delivery-address-name')
 })
 
 router.post('/payment-review', function(req, res) {
