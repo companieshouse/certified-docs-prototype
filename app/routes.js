@@ -10,6 +10,13 @@ router.get('/', function (req, res) {
     res.render('start')
   });
 
+
+router.post('/order-certified-document', function(req, res) {
+
+		res.redirect('CHS-signin')
+})
+
+
 router.post('/CHS-signin', function(req, res) {
 
     var errors = [];
@@ -85,21 +92,9 @@ router.post('/delivery-address-name', function(req, res) {
 	}
 	else
 	{
-		res.redirect('check-details-MVP')
+		res.redirect('check-details-certified-documents')
 	}
 })
 
-router.post('/payment-review', function(req, res) {
-	var errors = [];
-	var backtopage =[];
-	if(req.session.data['delivery-type'] == "collection"){
-
-			backtopage = res.redirect('order-details-collection');
-		}
-		else
-		{
-			res.redirect('order-details-delivery')
-		}
-})
 
 module.exports = router

@@ -18,19 +18,21 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="/order-certified-document" method="post">
       <h1 class="govuk-heading-xl">Order a certified document</h1>
 
       <p class="govuk-body-l">Use this service to order certified copies of documents in a company's filing history. </p>
-        <p class="govuk-body">For now, you can only order a certified copy of a document if we have it in a digital format in the company's filing history.</p>
+      
+      <p class="govuk-body">For now, you can only order a certified copy of a document if we have it in a digital format in the company's filing history.</p>
+      
         <div class="govuk-inset-text">To check if the documents you need are available in a digital format, <a href="https://beta.companieshouse.gov.uk/" class="govuk-link">search for the company in the Companies House service</a> and select the filing history tab.</div>
 
-<p class="govuk-body">You can order more than one certified document using this service.</p>
-    <p class="govuk-body">Ordering certified documents takes around 5 minutes.</p>
+      <p class="govuk-body">You can order more than one certified document using this service.</p>
+      <p class="govuk-body">Ordering certified documents takes around 5 minutes.</p>
 
 
       {{ govukButton({
         text: "Start now",
-        href: "../CHS-signin",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
         isStartButton: true
       }) }}
@@ -38,15 +40,16 @@
       <h2 class="govuk-heading-m">Fee</h2>
 
       <p class="govuk-body">It costs:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>£15 for each certified document</li>
-  <li>£30 for new incorporation documents (including the memorandum and articles)
-</ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>£15 for each certified document</li>
+          <li>£30 for new incorporation documents (including the memorandum and articles)</li>
+        </ul>
 
       <p class="govuk-body">The order will be sent by standard delivery to a UK or international address. We will dispatch the order within 4 working days.</p>
 
       <p class="govuk-body"> You can pay by debit or credit card. You cannot pay using a Companies House account. </p>
-
+      
+      </form>
     </div>
   </div>
 {% endblock %}
