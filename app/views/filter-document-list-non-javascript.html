@@ -13,9 +13,9 @@
 
 
 {% block content %}
- 
+
 <h1 class="govuk-heading-xl">Add documents to order</h1>
-  
+
   <span class="govuk-body govuk-!-font-size-36"><span class="govuk-!-font-weight-bold">JOHN LEWIS PLC </span></span></p>
   <span class="govuk-body">Company number <span class="govuk-!-font-weight-bold">00233462</span></span>
 
@@ -28,24 +28,24 @@
   <p class="govuk-!-margin-top-5">
 
     {{ govukInsetText({
-        html: "<p class='govuk-body'>*** Select the documents you would like to add to your order. </p>"
+        html: "<p class='govuk-body'> Select documents to them add to your order. </p>"
       }) }}
 
-    
+
 
      {{ govukButton({
               text: "Add documents to order",
               href:"delivery-address-name"
             }) }}
   </p>
-    
+
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          
 
- <div class="govuk-grid-column-full">  
- 
- 
+
+ <div class="govuk-grid-column-full">
+
+
   {{ govukTable({
         caption: "",
         head: [
@@ -86,7 +86,7 @@
      classes: 'document-type'
    },
    {
-     html: " <span class='govuk-body govuk-!-font-weight-bold'> Appointment </span> of Ms Sharon Michelle White as a director on 4 February 2020 <br> <span class='govuk-body-s'> This document is not currently shown on the filing history. If you require this document add to your order and we will do our best to include it in the order.</span>"
+     html: " <span class='govuk-body govuk-!-font-weight-bold'> Appointment </span> of Ms Sharon Michelle White as a director on 4 February 2020 <br> <span class='govuk-body-s'> Not currently available in the filing history. To request the document, add it to your basket and we will try to include it in the order.</span>"
    },
    {
      text: "£15"
