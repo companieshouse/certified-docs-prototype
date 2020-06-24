@@ -46,6 +46,33 @@ router.post('/CHS-signin', function(req, res) {
 	}
 })
 
+
+
+
+router.post('/filter-document-list', function(req, res) {
+
+	var errors = [];
+    var noDocumentSelectedHasError = false;
+
+    if(req.session.data['selectedDocs'] == 0){
+        noDocumentSelectedHasError = true;
+	}
+
+	if(noDocumentSelectedHasError){
+		res.render('filter-document-list', {
+			errorNoDocumentSelected: noDocumentSelectedHasError
+      	})
+	}
+	else
+	{
+		res.redirect('delivery-address-name')
+	}
+
+})
+
+
+
+
 router.post('/delivery-address-name', function(req, res) {
 
 	var errors = [];
@@ -96,5 +123,8 @@ router.post('/delivery-address-name', function(req, res) {
 	}
 })
 
+
+
+ 
 
 module.exports = router

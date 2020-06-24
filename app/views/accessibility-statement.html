@@ -1,8 +1,14 @@
 {% extends "layout.html" %}
 
-{% set serviceName %}
-  
-{% endset%}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ chHeader({
+    homepageUrl: "/",
+    assetPath: ""
+  }) }}
+{% endblock %}
+
 
 {% block pageTitle %}
   Accessibility statement

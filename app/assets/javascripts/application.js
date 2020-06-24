@@ -139,6 +139,8 @@ $("input[name='rowCheckBox']").on('change', function () {
       var description = $(this).closest('td').nextAll().last().prev().text();
       $("#documentsSelectedList").append("<li id='ul" + element + "'>" + description + "</li>");
   }
+  var input = document.getElementById('hiddenInput');
+  input.value = selectedDocuments.toString();
   $("#documentsSelectedCountTop").text(newText);
   $("#documentsSelectedCountBottom").text(newText);
 })
