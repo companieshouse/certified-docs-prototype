@@ -11,7 +11,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-m"> <center> CERTIFIED DOCUMENT <br> ORDER CONFIRMATION</center></h1>
 
@@ -63,115 +63,107 @@
                   value: {
                     text: "Standard delivery (aim to dispatch within 4 working days)"
                   }
+                },
+                {
+                  key: {
+                    text: "Amount paid"
+                  },
+                  value: {
+                    text: "£30"
+                  }
+                },
+                {
+                  key: {
+                    text: "Payment reference"
+                  },
+                  value: {
+                    text: "RS5VSN6DRE"
+                  }
+                },
+                {
+                  key: {
+                    text: "Date and time of payment"
+                  },
+                  value: {
+                    text: "11 March 2020 – 10:56:14"
+                  }
                 }
                 ]
             }) }}
 
-            <h3 class="govuk-heading-m">Payment details</h3>
-              {{ govukSummaryList({
-                rows: [
-                  {
-                    key: {
-                      text: "Amount paid",
-                      classes: 'govuk-!-width-one-half'
-                    },
-                    value: {
-                      text: "£30",
-                      classes: 'govuk-!-width-one-half'
-                    }
-                  },
-                  {
-                    key: {
-                      text: "Payment reference"
-                    },
-                    value: {
-                      text: "RS5VSN6DRE"
-                    }
-                  },
-                  {
-                    key: {
-                      text: "Date and time of payment"
-                    },
-                    value: {
-                      html: "11 March 2020 – 10:56:14"
-                    }
-                  }
-                ]
-              }) }}
+            
 
 
+            <h3 class="govuk-heading-m">Certified document details</h3>
 
-      <h4 class="govuk-heading-m">Certified document details</h4>
+                {{ govukTable({
+                    caption: "",
 
-          {{ govukTable({
-              caption: "",
+                    head: [
+                      {
+                        html: "Date filed",
+                        classes: 'govuk-!-width-one-quarter'
+                      },
+                      {
+                        html: "Type"
+                      },
+                      {
+                        html: "Description",
+                        classes: 'govuk-!-width-half'
+                      },
+                      {
+                        html: "Fee"
+                      }
+                    ],
+                    rows: [
+                      [
+                        {
+                          text: "15 Feb 2018"
+                        },
+                        {
+                        html: "AP01"
+                        },
+                        {
+                          text:"Appointment of Ms Sharon Michelle White as a director on 4 February 2020"
+                        },
+                        {
+                          text:"£15"
+                        }
 
+                      ],
+                       [
+                        {
+                          html: "07 Feb 2020"
+                        },
+                        {
+                          html: "AP03"
+                        },
+                        {
+                          html: "Appointment of Mr Peter Simpson as a secretary on 31 January 2018."
+                        },
+                        {
+                          text:"£15"
+                        }
+                      ],
+                      [
+                        {
+                          html: "<p class='govuk-body govuk-!-font-weight-bold'>Total</p>"
+                        },
+                        {},
+                        {},
+                        {
+                          html:"<p class='govuk-body govuk-!-font-weight-bold'>£30</p>"
+                        }
+                      ]
+                    ]
+                  }) }}
 
-              head: [
-                {
-                  html: "Date filed",
-                  classes: 'govuk-!-width-one-quarter'
-                },
-                {
-                  html: "Type"
-                },
-                {
-                  html: "Description",
-                  classes: 'govuk-!-width-half'
-                },
-                {
-                  html: "Fee"
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "15 Feb 2018"
-                  },
-                  {
-                  html: "AP01"
-                  },
-                  {
-                    text:"Appointment of Ms Sharon Michelle White as a director on 4 February 2020"
-                  },
-                  {
-                    text:"£15"
-                  }
+            
 
-                ],
-                 [
-                  {
-                    html: "07 Feb 2020"
-                  },
-                  {
-                    html: "AP03"
-                  },
-                  {
-                    html: "Appointment of Mr Peter Simpson as a secretary on 31 January 2018."
-                  },
-                  {
-                    text:"£15"
-                  }
-                ],
-                [
-                  {
-                    html: "<p class='govuk-body govuk-!-font-weight-bold'>Total</p>"
-                  },
-                  {},
-                  {},
-                  {
-                    html:"<p class='govuk-body govuk-!-font-weight-bold'>£30</p>"
-                  }
-                ]
-              ]
-            }) }}
+              <h4 class="govuk-heading-m">How to contact us</h4>
+                <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order.</p>
+                <p>Include your order reference number when you contact us. </p>
 
-      
-
-        <h5 class="govuk-heading-m">How to contact us</h5>
-          <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order.</p>
-          <p>Include your order reference number when you contact us. </p>
-
-        </div>
+              </div>
   </div>
 {% endblock %}
