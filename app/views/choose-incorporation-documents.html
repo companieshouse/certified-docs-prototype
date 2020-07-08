@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Choose incorporation documents
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: ""
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/choose-incorporation-documents" method="post">
+
+        {{ govukCheckboxes({
+            idPrefix: "more-info",
+            name: "more-info",
+            fieldset: {
+            legend: {
+            text: "What incorporation documents would you like to be included in the order?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "incorporation-documents",
+            text: "Certificate of incorporation",
+            hint: {
+        text: "...."
+        }
+        },
+        {
+              value: "directors-and-registered-office",
+              text: "Statement of directors and registered office",
+              hint: {
+          text: "..."
+        }
+        },
+          {
+              value: "directors-of-compliance",
+              text: "Declaration of compliance",
+              hint: {
+          text: "..."
+        }
+        },
+          {
+              value: "memorandum-of-association",
+              text: "Memorandum of association",
+              hint: {
+          text: "..."
+        }
+        },
+            {
+              value: "articles-of-association",
+              text: "Articles of association",
+              hint: {
+          text: "..."
+        }
+        }
+        ]
+        }) }}
+
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+  </form>
+</div>
+</div>
+{% endblock %}

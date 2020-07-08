@@ -39,7 +39,9 @@
         <span class="govuk-body">Company number <span class="govuk-!-font-weight-bold">00233462</span></span>
 
 
-        <input type="hidden" name="selectedDocs" id="hiddenInput" />
+        <input type="hidden" name="selectedDocs" id="selectedDocsHidden" />
+        <input type="hidden" name="incorporationSelected" id="incorporationSelectedHidden" />
+        <input type="hidden" name="resolutionSelected" id="resolutionSelectedHidden" />
      
         {{ govukInsetText({
               html: "<h2 class='govuk-heading-m' id='documentsSelectedCountTop'>No documents selected</h2>
@@ -305,11 +307,11 @@
              classes: 'no-wrap'
            },
            {
-             html: "MR04",
+             html: "RES",
              classes: 'document-type'
            },
            {
-             html: "<span class='govuk-body govuk-!-font-weight-bold'>Satisfaction of charge </span> 3 in full"
+             html: "<span class='govuk-body govuk-!-font-weight-bold'>Resolution </span> 3 in full"
            },
            {
              text: "£15"
@@ -713,14 +715,14 @@
              classes: 'no-wrap'
            },
            {
-             html: "TM01",
+             html: "NEWINC",
              classes: 'document-type'
            },
            {
-             html: "<span class='govuk-body govuk-!-font-weight-bold'> Termination of appointment </span> of Andrew John Street as a director on 28 October 2016"
+             html: "<span class='govuk-body govuk-!-font-weight-bold'> Incorporation </span>"
            },
            {
-             text: "£15"
+             text: "£***"
            }
         ]
                 ]

@@ -1,4 +1,5 @@
 const express = require('express')
+const app = express()
 const router = express.Router()
 
 // Add your routes here - above the module.exports line
@@ -65,11 +66,61 @@ router.post('/filter-document-list', function(req, res) {
 	}
 	else
 	{
-		res.redirect('delivery-address-name')
+
+		if(req.session.data['incorporationSelected'] == 'incorporation')
+		{
+			if(req.session.data['resolutionSelected'] == 'resolution'){
+				app.set('resolutionSelected', 'resolution');
+			}
+			res.redirect('choose-incorporation-documents')
+		}
+		else if(req.session.data['resolutionSelected'] == 'resolution'){
+			res.redirect('choose-resolution-documents')
+		}
+		else
+		{
+			res.redirect('delivery-address-name')
+		}
 	}
 
 })
 
+router.post('/choose-incorporation-documents', function(req, res) {
+
+	var errors = [];
+    var noIncorporationDocumentSelectedHasError = false;
+
+    if(req.session.data['selectedIncorporationDocs'] == 0){
+        noDocumentIncorporationSelectedHasError = true;
+	}
+
+	if(noIncorporationDocumentSelectedHasError){
+		res.render('choose-incorporation-documents', {
+			errorNoIncorporationDocumentSelected: noIncorporationDocumentSelectedHasError
+      	})
+	}
+	else
+	{
+		if(app.settings.resolutionSelected == 'resolution')
+		{
+			res.redirect('choose-resolution-documents')
+		}
+		else
+		{
+			res.redirect('delivery-address-name')
+		}
+		
+	}
+
+})
+
+router.post('/choose-resolution-documents', function(req, res) {
+
+	//ADD ERROR CHECK
+			res.redirect('delivery-address-name')
+		
+
+})
 
 
 

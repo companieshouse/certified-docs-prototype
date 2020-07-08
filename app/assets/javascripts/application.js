@@ -77,6 +77,7 @@ $("input[name='incorporation']").on('change', function () {
   if ($(this).prop('checked') === false) {
       userSelections = jQuery.grep(userSelections, function(value) {
         return (value != 'MEM/ARTS' && value != 'NEWINC');
+
       });
   } else {
     userSelections.push('MEM/ARTS');
@@ -125,6 +126,15 @@ $("input[name='rowCheckBox']").on('change', function () {
         newText = selectedDocuments + " documents selected"
       }
       var element = $(this).closest('tr').index();
+      var description = $(this).closest('td').nextAll().last().prev().text();
+      if(description.includes('Incorporation')){
+        var input = document.getElementById('incorporationSelectedHidden');
+        input.value = '';
+      }
+      else if(description.includes('Resolution')){
+        var input = document.getElementById('resolutionSelectedHidden');
+        input.value = '';
+      }
       $("#ul"+ element).remove();
 
     } else {
@@ -137,9 +147,17 @@ $("input[name='rowCheckBox']").on('change', function () {
       }
       var element = $(this).closest('tr').index();
       var description = $(this).closest('td').nextAll().last().prev().text();
+      if(description.includes('Incorporation')){
+        var input = document.getElementById('incorporationSelectedHidden');
+        input.value = 'incorporation';
+      }
+      else if(description.includes('Resolution')){
+        var input = document.getElementById('resolutionSelectedHidden');
+        input.value = 'resolution';
+      }
       $("#documentsSelectedList").append("<li id='ul" + element + "'>" + description + "</li>");
   }
-  var input = document.getElementById('hiddenInput');
+  var input = document.getElementById('selectedDocsHidden');
   input.value = selectedDocuments.toString();
   $("#documentsSelectedCountTop").text(newText);
   $("#documentsSelectedCountBottom").text(newText);
