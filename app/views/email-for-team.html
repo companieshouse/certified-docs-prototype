@@ -66,14 +66,6 @@
                 },
                 {
                   key: {
-                    text: "Amount paid"
-                  },
-                  value: {
-                    text: "£30"
-                  }
-                },
-                {
-                  key: {
                     text: "Payment reference"
                   },
                   value: {
@@ -91,10 +83,11 @@
                 ]
             }) }}
 
-            
+            </div>
+            <div class="govuk-grid-column-full">
 
 
-            <h3 class="govuk-heading-m">Certified document details</h3>
+            <h3 class="govuk-heading-m">Certified documents for John Lewis PLC</h3>
 
                 {{ govukTable({
                     caption: "",
@@ -102,7 +95,7 @@
                     head: [
                       {
                         html: "Date filed",
-                        classes: 'govuk-!-width-one-quarter'
+                        classes: 'no-wrap'
                       },
                       {
                         html: "Type"
@@ -118,7 +111,8 @@
                     rows: [
                       [
                         {
-                          text: "15 Feb 2018"
+                          text: "15 Feb 2018",
+                          classes: 'no-wrap'
                         },
                         {
                         html: "AP01"
@@ -133,13 +127,14 @@
                       ],
                        [
                         {
-                          html: "07 Feb 2020"
+                          html: "07 Feb 2020",
+                          classes: 'no-wrap'
                         },
                         {
                           html: "AP03"
                         },
                         {
-                          html: "Appointment of Mr Peter Simpson as a secretary on 31 January 2018."
+                          html: "Appointment of Mr Peter Simpson as a secretary on 31 January 2018"
                         },
                         {
                           text:"£15"
@@ -161,9 +156,9 @@
             
 
               <h4 class="govuk-heading-m">How to contact us</h4>
-                <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order.</p>
-                <p>Include your order reference number when you contact us. </p>
+                <p class="govuk-body">Email <a href="mailto:enquiries@companieshouse.gov.uk" class="govuk-link">enquiries@companieshouse.gov.uk</a> if you have questions about your order. Include your order reference number when you contact us. </p>
 
               </div>
+            </div>
   </div>
 {% endblock %}
