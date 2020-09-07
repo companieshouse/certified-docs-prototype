@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Select document to order
+  Add documents to order
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-full">
       <form action="/filter-document-list" method="post">
 
-   <h1 class="govuk-heading-xl">Select document to order</h1>
+   <h1 class="govuk-heading-xl">Add documents to order</h1>
         
 
         {% if errorNoDocumentSelected  == true %}
@@ -40,8 +40,21 @@
 
 
         <input type="hidden" name="selectedDocs" id="hiddenInput" />
+     
+        {{ govukInsetText({
+              html: "<h2 class='govuk-heading-m' id='documentsSelectedCountTop'>No documents selected</h2>
+            <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+            </ul>"
+            }) }}
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+       
+
+            {{ govukButton({
+                    text: "Add documents to order"
+                  }) }}
+       
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
           <div class="govuk-grid-column-one-quarter">
 
@@ -140,6 +153,9 @@
                 caption: "",
                 head: [
                   {
+                    text: "Select"
+                  },
+                  {
                     text: "Date filed",
                     classes: "no-wrap"
                   },
@@ -152,14 +168,18 @@
                   },
                   {
                     text: "Fee"
-                  },
-                  {
-                    text: "Order option",
-                    classes: 'no-wrap'
                   }
                 ],
                 rows: [
                   [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "10 Feb 2020",
              classes: 'no-wrap'
@@ -173,13 +193,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "07 Feb 2020",
              classes: 'no-wrap'
@@ -193,13 +217,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "31 Jan 2020",
              classes: 'no-wrap'
@@ -213,13 +241,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "16 Aug 2019",
              classes: 'no-wrap'
@@ -233,13 +265,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "15 Jul 2019",
              classes: 'no-wrap'
@@ -253,13 +289,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "15 Jul 2019",
              classes: 'no-wrap'
@@ -273,13 +313,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "15 Jul 2019",
              classes: 'no-wrap'
@@ -293,13 +337,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "05 Jul 2019",
              classes: 'no-wrap'
@@ -313,13 +361,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "27 Jul 2018",
              classes: 'no-wrap'
@@ -333,13 +385,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "04 Jul 2018",
              classes: 'no-wrap'
@@ -353,13 +409,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "15 Feb 2018",
              classes: 'no-wrap'
@@ -373,13 +433,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "15 Feb 2018",
              classes: 'no-wrap'
@@ -393,13 +457,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "10 Jul 2017",
              classes: 'no-wrap'
@@ -413,13 +481,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "10 Jul 2017",
              classes: 'no-wrap'
@@ -433,13 +505,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "07 Jul 2017",
              classes: 'no-wrap'
@@ -453,13 +529,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "07 Jul 2017",
              classes: 'no-wrap'
@@ -473,13 +553,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "29 Jun 2017",
              classes: 'no-wrap'
@@ -493,13 +577,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "11 Jan 2017",
              classes: 'no-wrap'
@@ -513,13 +601,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "25 Nov 2016",
              classes: 'no-wrap'
@@ -533,13 +625,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "04 Nov 2016",
              classes: 'no-wrap'
@@ -553,13 +649,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "04 Nov 2016",
              classes: 'no-wrap'
@@ -573,13 +673,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "04 Nov 2016",
              classes: 'no-wrap'
@@ -593,13 +697,17 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ],
         [
+          {
+             html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                              <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+                      ,
+                      classes: "no-wrap"
+           },
            {
              text: "01 Nov 2016",
              classes: 'no-wrap'
@@ -613,10 +721,6 @@
            },
            {
              text: "£15"
-           },
-           {
-              html: '<a href="#" class="govuk-link">Select document</a>',
-              classes: 'no-wrap'
            }
         ]
                 ]
