@@ -3,6 +3,10 @@
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% block pageTitle %}
+  Add incorporation documents to your order 
+{% endblock %}
+
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,129 +19,64 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/incorporation-document" method="post" novalidate>
 
-        <h1 class="govuk-heading-xl">Add the incorporation documents to your order</h1>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-        {% set otherCertificateHtml %}
-        {{ govukInput({
-          id: "other-certificate-type",
-          name: "other-certificate-type",
-          spellcheck: false,
-          classes: "govuk-!-width-one-half",
-          label: {
-            text: "Enter document type"
-          }
-        }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          idPrefix: "document-one",
-          name: "document-one ",
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
           fieldset: {
             legend: {
-              text: "Document 1",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
+              text: "Which incorporation documents would you like to order?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
             }
           },
-          
+          hint: {
+            text: "Check the companies filing history to make sure the documents exist. You can select up to two documents."
+          },
           items: [
             {
               value: "registration-cert",
-              text: "Registration certificate "
+              text: "Registration certificate (IN01)",
+              hint: {
+                text: "for a private, public limited or unlimited company"
+              }
+            },
+            {
+              value: "LL-IN01",
+              text: "Registration certificate (LL IN01)",
+              hint: {
+                text: "for a Limited Liability Partnership"
+              }
             },
             {
               value: "memorandum",
-              text: "Memorandum"
+              text: "Memorandum of Association"
             },
             {
               value: "articles",
-              text: "Articles"
+              text: "Articles of Association"
             },
-            {
-              value: "IN01",
-              text: "IN01"
-            },
-            {
-              value: "IN01",
-              text: "Form 10"
-            },
-            {
-              value: "IN01",
-              text: "Form 12"
-            },
-            {
-              value: "other",
-              text: "Other",
-              conditional: {
-                html: otherCertificateHtml
-              }
-            }
-          ]
-        }) }}
-
-        {% set otherCertificateTwoHtml %}
-        {{ govukInput({
-          id: "other-certificate-type-2",
-          name: "other-certificate-type-2",
-          spellcheck: false,
-          classes: "govuk-!-width-one-half",
-          label: {
-            text: "Enter document type"
-          }
-        }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          idPrefix: "document-two",
-          name: "document-two ",
-          fieldset: {
-            legend: {
-              text: "Document 2",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
           
-          items: [
             {
-              value: "registration-cert-2",
-              text: "Registration certificate "
+              value: "form-10",
+              text: "Statement of officers (Form 10)"
             },
             {
-              value: "memorandum-2",
-              text: "Memorandum"
+              value: "form-12",
+              text: "Statement of compliance (Form 12)"
             },
             {
-              value: "articles-2",
-              text: "Articles"
-            },
-            {
-              value: "IN01-2",
-              text: "IN01"
-            },
-            {
-              value: "form-10-2",
-              text: "Form 10"
-            },
-            {
-              value: "form-12-2",
-              text: "Form 12"
-            },
-            {
-              value: "other-2",
-              text: "Other",
-              conditional: {
-                html: otherCertificateTwoHtml
-              }
+              value: "form-30",
+              text: "Removal of limited or LTD from a company name (Form 30)"
             }
-          ]
+            ]
         }) }}
-
-
 
         {{ govukButton({
           text: "Continue"
         }) }}
+
       </form>
     </div>
   </div>
