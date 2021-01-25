@@ -17,23 +17,23 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Add the incorporation documents to your order</h1>
+
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        html: 'Check the incorporation documents are available on the <a href="#" class="govuk-link">companies filing history</a> before you order. You can add up to two documents. '
+      }) }}
+
       <form action="/incorporation-document" method="post" novalidate>
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
-          fieldset: {
-            legend: {
-              text: "Which incorporation documents would you like to order?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            text: "Check the companies filing history to make sure the documents exist. You can select up to two documents."
-          },
+          idPrefix: "inc-documents",
+          name: "inc-documents",
+
           items: [
             {
               value: "registration-cert",
