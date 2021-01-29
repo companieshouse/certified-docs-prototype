@@ -23,7 +23,7 @@
       {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
       {{ govukInsetText({
-        html: 'Check that the incorporation documents are available on the <a href="#" class="govuk-link">companies filing history</a> before you order. You can add up to two documents. '
+        html: 'Check the incorporation PDF in the <a href="#" target = "blank"class="govuk-link">company\'s filing history (opens in a new tab)</a> to see which documents are available before you order. You can add up to 2 documents.'
       }) }}
 
       <form action="/incorporation-document" method="post" novalidate>
@@ -42,11 +42,11 @@
           
             {
               value: "memorandum",
-              text: "Memorandum of Association"
+              text: "Memorandum of association"
             },
             {
               value: "articles",
-              text: "Articles of Association"
+              text: "Articles of association"
             },
               {
               value: "registration-cert",
@@ -59,7 +59,7 @@
               value: "LL-IN01",
               text: "LL IN01 - Registration certificate",
               hint: {
-                text: "for a Limited Liability Partnership"
+                text: "for a limited liability partnership"
               }
             },
           
