@@ -18,22 +18,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Which incorporation documents do you want to order?</h1>
-
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-      {{ govukInsetText({
-        html: 'Check the incorporation PDF in the <a href="#" target = "blank"class="govuk-link">company\'s filing history (opens in a new tab)</a> to see which documents are available before you order.'
-      }) }}
 
       <form action="/incorporation-document" method="post" novalidate>
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "inc-documents",
-          name: "inc-documents",
-
+          idPrefix: "incorporation-documents",
+          name: "incorporation-documents",
+          fieldset: {
+            legend: {
+              text: "Which incorporation documents do you want to order?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: '<div class="govuk-inset-text"> Incorporation orders can include multiple documents. Each document costs £15. You will need to check the incorporation PDF in the  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">company\'s filing history (opens in new tab)</a> to see which documents are available before you order.</div>'
+          },
           items: [
             {
               value: "registration-cert",
