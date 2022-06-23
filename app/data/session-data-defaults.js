@@ -20,6 +20,6 @@ Example usage:
 module.exports = {
 
   // Insert values here
-  "email": [ "test@testcompany.co.uk" ]
+  "email": [ "testuser@testcompany.co.uk" ]
 
 }
