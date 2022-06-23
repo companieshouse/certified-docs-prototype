@@ -1,0 +1,203 @@
+
+{% extends "layout.html" %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Check your order details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/user-bar.html" %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "delivery-address-name"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <form action="/payment-review" method="post">
+
+            <h1 class="govuk-heading-xl">Check your order details</h1>
+
+            <h2 class="govuk-heading-m">Your order details</h2>
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Company name",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "John Lewis PLC"
+                  }
+                },
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "00233462"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery method"
+                  },
+                  value: {
+                    text: "Standard delivery (aim to dispatch within 10 working days)"
+                  }
+                },
+                {
+                  key: {
+                    text: "Delivery details"
+                  },
+                  value: {
+                    html: "Mr Jamies Hanson </br> 48 Tonna Road </br> Barry </br> CF45 8YG"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "delivery address"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+            <h3 class="govuk-heading-m">Document details </h3>
+
+
+            {{ govukTable({
+              caption: "",
+
+
+              head: [
+                {
+                  html: "Date filed",
+                  classes: 'govuk-!-width-one-quarter'
+                },
+                {
+                  html: "Type"
+                },
+                {
+                  html: "Description",
+                  classes: 'govuk-!-width-half'
+                },
+                {
+                  html: "Fee"
+                },
+                {
+                  html: ""
+                },
+                {
+                  html: ""
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "31 Dec 1987"
+                  },
+                  {
+                  html: "NEWINC"
+                  },
+                  {
+                    text:"Registration certificate (Certificate of Incorporation)"
+                  },
+                  {
+                    text:"£15"
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Change</a>'
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Remove</a>'
+                  }
+                ],
+                [
+                  {
+                    text: "31 Dec 1987"
+                  },
+                  {
+                  html: "NEWINC"
+                  },
+                  {
+                    text:"Memorandum of association"
+                  },
+                  {
+                    text:"£15"
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Change</a>'
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Remove</a>'
+                  }
+                ],
+                [
+                  {
+                    text: "31 Dec 1987"
+                  },
+                  {
+                  html: "NEWINC"
+                  },
+                  {
+                    text:"Articles of association"
+                  },
+                  {
+                    text:"£15"
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Change</a>'
+                  },
+                  {
+                    html:'<a href="javascript:void(0)">Remove</a>'
+                  }
+                ],
+                [
+                  {
+                    html: "<h4 class='govuk-heading-s'>Total</h4>"
+                  },
+                  {
+                  },
+                  {
+                  },
+                  {
+                    html:"<h4 class='govuk-heading-s'>£45</h4>"
+                  },
+                  {
+                  },
+                  {
+                  }
+                ]
+              ]
+            }) }}
+
+
+            <p class="govuk-body"><a href='javascript:void(0)' class='govuk-body govuk-link'>Add another document</a></p>
+
+          <!--  <p class="govuk-body">To select a different document, <a href='/filter-document-list' class='govuk-body govuk-link'>start the order again</a>. </p>-->
+
+
+        {{ govukButton({
+          text: "Continue to payment",
+          href:"https://products.payments.service.gov.uk/pay/b14267b9d0084cc3be7027bd71eac8b6"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
