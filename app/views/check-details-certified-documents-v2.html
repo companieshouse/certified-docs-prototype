@@ -24,59 +24,9 @@
 
         <form action="/payment-review" method="post">
 
-            <h1 class="govuk-heading-xl">Check your order details</h1>
+            <h1 class="govuk-heading-xl">Your basket</h1>
 
-            <h2 class="govuk-heading-m">Your order details</h2>
-
-            {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-                {
-                  key: {
-                    text: "Company name",
-                    classes: 'govuk-!-width-one-half'
-                  },
-                  value: {
-                    text: "John Lewis PLC"
-                  }
-                },
-                {
-                  key: {
-                    text: "Company number"
-                  },
-                  value: {
-                    text: "00233462"
-                  }
-                },
-                {
-                  key: {
-                    text: "Delivery method"
-                  },
-                  value: {
-                    text: "Standard delivery (aim to dispatch within 10 working days)"
-                  }
-                },
-                {
-                  key: {
-                    text: "Delivery details"
-                  },
-                  value: {
-                    html: "Mr Jamies Hanson </br> 48 Tonna Road </br> Barry </br> CF45 8YG"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "delivery address"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }) }}
-
-            <h3 class="govuk-heading-m">Document details </h3>
+            <h2 class="govuk-heading-m">Missing image request</h2>
 
 
             {{ govukTable({
@@ -85,14 +35,14 @@
 
               head: [
                 {
-                  html: "Date filed",
+                  html: "Description",
                   classes: 'govuk-!-width-one-quarter'
                 },
                 {
-                  html: "Type"
+                  html: "Company Number"
                 },
                 {
-                  html: "Description",
+                  html: "Order Type",
                   classes: 'govuk-!-width-half'
                 },
                 {
@@ -108,82 +58,115 @@
               rows: [
                 [
                   {
-                    text: "31 Dec 1987"
+                    text: "Item description here"
                   },
                   {
-                  html: "NEWINC"
+                  html: "company number here"
                   },
                   {
-                    text:"Registration certificate (Certificate of Incorporation)"
+                    text:"Order type here"
                   },
                   {
-                    text:"£15"
-                  },
-                  {
-                    html:'<a href="javascript:void(0)">Change</a>'
+                    text:"£3"
                   },
                   {
                     html:'<a href="javascript:void(0)">Remove</a>'
-                  }
-                ],
-                [
-                  {
-                    text: "31 Dec 1987"
-                  },
-                  {
-                  html: "NEWINC"
-                  },
-                  {
-                    text:"Memorandum of association"
-                  },
-                  {
-                    text:"£15"
-                  },
-                  {
-                    html:'<a href="javascript:void(0)">Change</a>'
-                  },
-                  {
-                    html:'<a href="javascript:void(0)">Remove</a>'
-                  }
-                ],
-                [
-                  {
-                    text: "31 Dec 1987"
-                  },
-                  {
-                  html: "NEWINC"
-                  },
-                  {
-                    text:"Articles of association"
-                  },
-                  {
-                    text:"£15"
-                  },
-                  {
-                    html:'<a href="javascript:void(0)">Change</a>'
-                  },
-                  {
-                    html:'<a href="javascript:void(0)">Remove</a>'
-                  }
-                ],
-                [
-                  {
-                    html: "<h4 class='govuk-heading-s'>Total</h4>"
-                  },
-                  {
-                  },
-                  {
-                  },
-                  {
-                    html:"<h4 class='govuk-heading-s'>£45</h4>"
-                  },
-                  {
-                  },
-                  {
                   }
                 ]
               ]
-            }) }}
+          }) }}
+
+        <p>It can take us several hours to check the availability of a document. We will aim to add it to the company's filing history that day if the request is received between 8:30am and 3pm, Monday to Friday (excluding bank holidays).</p>
+        <p>If you make the request after 3pm, we will add the document the next working day.</p>
+
+
+<h2 class="govuk-heading-m">For delivery</h2>
+
+
+        {{ govukTable({
+          caption: "",
+
+
+          head: [
+            {
+              html: "Description",
+              classes: 'govuk-!-width-one-quarter'
+            },
+            {
+              html: "Company Number"
+            },
+            {
+              html: "Order Type",
+              classes: 'govuk-!-width-half'
+            },
+            {
+              html: "Delivery method"
+            },
+            {
+              html: "Fee"
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Item description here"
+              },
+              {
+              html: "company number here"
+              },
+              {
+                text:"Order type here"
+              },
+              {
+                text:"£15"
+              },
+
+              {
+                html:'<a href="javascript:void(0)">Remove</a>'
+              }
+            ]
+          ]
+      }) }}
+
+      <br>
+    </br>
+
+<h2 class="govuk-heading-m">Delivery details</h2>
+
+
+
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Delivery details",
+                    classes: 'govuk-!-width-one-half'
+                  },
+                  value: {
+                    text: "64 Zoo Lane, London, W1 200"
+                  }
+                },
+                {
+                  key: {
+                    text: "Total fee"
+                  },
+                  value: {
+                    text: "£18"
+                }
+              }
+            ]
+          }) }}
+
+
+
+            
 
 
             <p class="govuk-body"><a href='javascript:void(0)' class='govuk-body govuk-link'>Add another document</a></p>
@@ -200,4 +183,5 @@
 
     </div>
   </div>
+
 {% endblock %}
