@@ -4,13 +4,13 @@
   {{ serviceName }} – GOV.UK
 {% endblock %}
 
-<!-- Trying to put in tabs for index page like on directors !-->
+
 {% block content %}
-  <div class="gov-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">
         {{serviceName}}
-        <span class="govuk-caption-xl">Phoebe's attempt 1</span>
+        <span class="govuk-caption-xl">phoebe index attempt</span>
       </h1>
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h4 class="govuk-tabs__title">
@@ -38,12 +38,14 @@
           <h3 class="govuk-heading-m">Core journey</h3>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="start.html">Start page</a>
+              <a href="/sign-in">Sign in</a>
             </li>
             <li>
-              <a href="sign-in">Sign in</a>
+              <a href="/forgot-password">Forgot password</a>
             </li>
-            <li>
-              <a href="create-account">Create account</a>
-            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
