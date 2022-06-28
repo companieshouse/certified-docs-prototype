@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ serviceName }} – GOV.UK
 {% endblock %}
 
 <!-- Trying to put in tabs for index page like on directors !-->
@@ -33,34 +33,17 @@
             </a>
           </li>
         </ul>
+
         <div class="govuk-tabs__panel" id="screens">
           <h3 class="govuk-heading-m">Core journey</h3>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="start.html">Start page</a>
             </li>
-{% endblock %}
-
-
-
-
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
-{% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
-      </li>
-    </ol>
-  </div>
+            <li>
+              <a href="sign-in">Sign in</a>
+            </li>
+            <li>
+              <a href="create-account">Create account</a>
+            </li>
 {% endblock %}
