@@ -139,7 +139,7 @@
 
 <h2 class="govuk-heading-m">Delivery details</h2>
 
-<!-- need to add a change link to address table-->
+
 
             {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
@@ -151,6 +151,15 @@
                   },
                   value: {
                     text: "64 Zoo Lane, London, W1 200"
+                  },
+                  actions: {
+                    items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "address"
+                    }
+                    ]
                   }
                 },
                 {
