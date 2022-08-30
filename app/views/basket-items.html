@@ -54,11 +54,9 @@
                   html: "Fee"
                 },
                 {
-                  html: ""
-                },
-                {
-                  html: ""
+                html: '<span class="govuk-visually-hidden">Remove</span>'
                 }
+
               ],
               rows: [
                 [
@@ -69,7 +67,7 @@
                     text: "AA"
                   },
                   {
-                  html: "Accounts for 'small' co. Made up to 31/03/87."
+                  html: "Accounts for 'small' co. Made up to 25/07/94."
                   },
                   {
                     text:"12889207"
@@ -78,7 +76,7 @@
                     text:"£3"
                   },
                   {
-                    html:'<a href="javascript:void(0)">Remove <span class="govuk-visually-hidden">accounts for small co. Made up to 31/03/87</span></a>'
+                    html:'<a href="javascript:void(0)">Remove <span class="govuk-visually-hidden">accounts for small co. Made up to 25/07/94</span></a>'
                   }
                 ]
               ]
@@ -123,11 +121,9 @@
               html: "Fee"
             },
             {
-              text: ""
-            },
-            {
-              text: ""
+              html: '<span class="govuk-visually-hidden">Remove</span>'
             }
+
           ],
           rows: [
             [
@@ -151,21 +147,21 @@
               },
 
               {
-                html:'<a href="javascript:void(0)">Remove</a>'
+                html:'<a href="javascript:void(0)">Remove<span class="govuk-visually-hidden">accounts for small co. Made up to 31/03/87</span></a>'
               }
             ],
             [
             {
-              text: "7 Jul 1987"
+              text: "17 Dec 1995"
             },
               {
                 text: "AA"
               },
               {
-              html: "Accounts made for 'small' co. Made up to 31/03/87"
+              html: "Accounts made for 'small' co. Made up to 30/11/1995"
               },
               {
-                text:"12889207"
+                text:"00006400"
               },
               {
                 text:"Standard"
@@ -175,7 +171,7 @@
               },
 
               {
-                html:'<a href="javascript:void(0)">Remove<span class="govuk-visually-hidden">accounts for small co. Made up to 31/03/87</span></a>'
+                html:'<a href="javascript:void(0)">Remove<span class="govuk-visually-hidden">accounts for small co. Made up to 30/11/95</span></a>'
               }
             ]
           ]
@@ -200,10 +196,12 @@
                     html: "Fee"
                   },
                   {
-                    text: ""
+                    html: '<span class="govuk-visually-hidden">View or change</span>'
+
                   },
                   {
-                    text: ""
+                    html: '<span class="govuk-visually-hidden">Remove</span>'
+
                   }
 
                 ],
@@ -216,13 +214,13 @@
                       text: "12889207"
                     },
                     {
-                    html: "Standard delivery"
+                    html: "Standard"
                     },
                     {
                       text:"£15"
                     },
                     {
-                      html:'<a href="javascript:void(0)">View or change certificate options <span class="govuk-visually-hidden">Dissolution with all company name changes - 12889207</span></a>'
+                      html:'<a href="javascript:void(0)">View or change <span class="govuk-visually-hidden">Certificate options - Dissolution with all company name changes - 12889207</span></a>'
                     },
                     {
                       html:'<a href="javascript:void(0)">Remove <span class="govuk-visually-hidden">Dissolution with all company name changes - 12889207</span></a>'
@@ -260,31 +258,41 @@
 
             ]
           }) }}
-
-<h2 class="govuk-heading-m">Total £48</h2>
-
-
-
-
-          <!--  <p class="govuk-body">To select a different document, <a href='/filter-document-list' class='govuk-body govuk-link'>start the order again</a>. </p>-->
-
-          <div class="govuk-button-group">
-            {{ govukButton({
-              text: "Continue to payment",
-              href:"https://products.payments.service.gov.uk/pay/b14267b9d0084cc3be7027bd71eac8b6"
-            }) }}
-
-            {{ govukButton({
-              text: "Add another document",
-              classes: "govuk-button--secondary"
-            }) }}
+        </div>
+          <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">For standard delivery we aim to send your items within 10 working days.</p>
+<!-- This should only be shown if there are standard delivery items in the basket - dynamic -->
+<p class="govuk-body">If we recieve your order with express delivery before 11am we will send items the same day. Express orders recieved after 11am will be sent the next working day. </p>
+<!-- This should only be shown if there are express delivery items in the basket - dynamic -->
           </div>
+<div class="govuk-grid-column-full">
+  <h2 class="govuk-heading-l">Total £48</h2>
+
+
+
+
+            <!--  <p class="govuk-body">To select a different document, <a href='/filter-document-list' class='govuk-body govuk-link'>start the order again</a>. </p>-->
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue to payment",
+                href:"https://products.payments.service.gov.uk/pay/b14267b9d0084cc3be7027bd71eac8b6"
+              }) }}
+
+              {{ govukButton({
+                text: "Add another document",
+                classes: "govuk-button--secondary"
+              }) }}
+            </div>
+</div>
 
 
 
       </form>
 
     </div>
+
   </div>
+
 
 {% endblock %}
